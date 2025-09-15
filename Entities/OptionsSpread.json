@@ -1,0 +1,101 @@
+{
+  "name": "OptionsSpread",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Stock ticker symbol"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "spread_type": {
+      "type": "string",
+      "enum": [
+        "bull_call_spread",
+        "bear_call_spread",
+        "bull_put_spread",
+        "bear_put_spread"
+      ],
+      "description": "Type of options spread"
+    },
+    "strike_short": {
+      "type": "number",
+      "description": "Short strike price"
+    },
+    "strike_long": {
+      "type": "number",
+      "description": "Long strike price"
+    },
+    "expiration_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Options expiration date"
+    },
+    "days_to_expiration": {
+      "type": "number",
+      "description": "Days until expiration"
+    },
+    "max_profit": {
+      "type": "number",
+      "description": "Maximum possible profit"
+    },
+    "max_loss": {
+      "type": "number",
+      "description": "Maximum possible loss"
+    },
+    "breakeven_price": {
+      "type": "number",
+      "description": "Breakeven stock price"
+    },
+    "profit_probability": {
+      "type": "number",
+      "description": "Probability of profit (0-100)"
+    },
+    "expected_value": {
+      "type": "number",
+      "description": "Expected value of the trade"
+    },
+    "current_stock_price": {
+      "type": "number",
+      "description": "Current stock price"
+    },
+    "net_debit_credit": {
+      "type": "number",
+      "description": "Net debit (negative) or credit (positive)"
+    },
+    "implied_volatility": {
+      "type": "number",
+      "description": "Average implied volatility"
+    },
+    "delta": {
+      "type": "number",
+      "description": "Position delta"
+    },
+    "theta": {
+      "type": "number",
+      "description": "Position theta (time decay)"
+    },
+    "bid_ask_spread": {
+      "type": "number",
+      "description": "Bid-ask spread width"
+    },
+    "volume": {
+      "type": "number",
+      "description": "Total volume of both legs"
+    },
+    "open_interest": {
+      "type": "number",
+      "description": "Total open interest of both legs"
+    }
+  },
+  "required": [
+    "symbol",
+    "company_name",
+    "spread_type",
+    "max_profit",
+    "max_loss",
+    "expected_value"
+  ]
+}
